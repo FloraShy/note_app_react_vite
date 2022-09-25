@@ -1,34 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import "./style/base.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const colorList = [
+    "#B9DEC9",
+    "#ED6D3D",
+    "#608F68",
+    "#F49503",
+    "#EDC1CF",
+    "#344B5C",
+    "#FADD99",
+    "#E07241",
+    "#BECAB7",
+    "#4F794A",
+    "#EBB6C2",
+    "#3D74AA",
+    "#F2CC2B",
+    "#5D0C8A",
+  ];
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
+    <>
+      <h1> Chinese Traditional Color</h1>
 
-export default App
+      <div className="container">
+        {colorList.map((color) => {
+          return (
+            <div className="colorpage" style={{ backgroundColor: color }}>
+              {color}
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
+}
+export default App;
